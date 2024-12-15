@@ -125,18 +125,18 @@
 
         .review-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 20px;
+            gap: 20px;
         }
 
         .review-icon {
-            width: 64px;
-            height: 64px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background-image: url('reviewicon.png');
             background-size: cover;
             background-position: center;
-            margin-right: 20px;
         }
 
         .review-text {
@@ -145,6 +145,8 @@
         }
 
         .review-text strong {
+            display: block;
+            margin-bottom: 8px;
             color: #ff1493;
         }
 
@@ -257,15 +259,24 @@
         <div class="review-box">
             <div class="review-item">
                 <div class="review-icon"></div>
-                <div class="review-text"><strong>Fetuso:</strong> "Koola Tweaks doubled my FPS in no time! Highly recommend the Ultimate utility."</div>
+                <div class="review-text">
+                    <strong>Fetuso:</strong>
+                    "Koola Tweaks doubled my FPS in no time! Highly recommend the Ultimate utility."
+                </div>
             </div>
             <div class="review-item">
                 <div class="review-icon"></div>
-                <div class="review-text"><strong>YADII-_:</strong> "I can't believe how smooth my games run now. Totally worth the $5!"</div>
+                <div class="review-text">
+                    <strong>YADII-_:</strong>
+                    "I can't believe how smooth my games run now. Totally worth the $5!"
+                </div>
             </div>
             <div class="review-item">
                 <div class="review-icon"></div>
-                <div class="review-text"><strong>IKONIK:</strong> "The free version is great, but the Ultimate utility takes it to another level. Must-buy!"</div>
+                <div class="review-text">
+                    <strong>IKONIK:</strong>
+                    "The free version is great, but the Ultimate utility takes it to another level. Must-buy!"
+                </div>
             </div>
         </div>
         <a href="https://discord.gg/koola" class="cta-button">Upgrade to Ultimate</a>
