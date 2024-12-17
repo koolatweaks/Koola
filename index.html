@@ -24,41 +24,52 @@
         header {
             background: linear-gradient(to right, #c71585, #800080);
             padding: 20px;
-            text-align: center;
-            animation: fadeIn 2s ease-in;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         header h1 {
             margin: 0;
         }
 
-        header img {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 50px;
-            height: 50px;
-        }
-
-        nav {
+        .nav-bar {
             display: flex;
-            justify-content: center;
-            background-color: rgba(128, 0, 128, 0.9);
-            animation: slideIn 1s ease-in-out;
+            gap: 15px;
         }
 
-        nav a {
+        .nav-bar a {
             color: white;
             text-decoration: none;
-            padding: 15px;
-            margin: 0 10px;
-            transition: background-color 0.3s;
+            padding: 10px 15px;
+            font-size: 1.1em;
+            transition: color 0.3s, background-color 0.3s;
         }
 
-        nav a:hover {
-            background-color: #c71585;
+        .nav-bar a.active {
+            color: red;
+        }
+
+        .nav-bar a:hover {
+            background-color: rgba(255, 0, 0, 0.2);
+        }
+
+        .account-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .account-buttons a {
+            color: white;
+            text-decoration: none;
+            background: #c71585;
+            padding: 10px 15px;
             border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .account-buttons a:hover {
+            background: #ff1493;
         }
 
         .content {
@@ -67,206 +78,199 @@
             animation: fadeIn 2s;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: #c71585;
+        .banner {
+            background-color: black;
             color: white;
-            text-decoration: none;
-            padding: 15px 25px;
-            margin: 20px 0;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #ff1493;
-            transform: scale(1.1);
-        }
-
-        footer {
-            background-color: rgba(128, 0, 128, 0.9);
-            padding: 10px;
             text-align: center;
-            animation: fadeInUp 1.5s;
+            padding: 20px;
+            font-size: 2em;
+            margin: 20px 0;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
             padding: 20px;
         }
 
         .feature-box {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 15px;
-            overflow: hidden;
+            text-align: center;
             position: relative;
             box-shadow: 0 0 15px rgba(199, 21, 133, 0.7);
-            animation: fadeInUp 1.5s ease-in-out;
         }
 
-        .feature-box:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s;
-            box-shadow: 0 0 25px rgba(255, 20, 147, 0.9);
-        }
-
-        .review-box {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(199, 21, 133, 0.8);
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .review-item {
-            margin-bottom: 20px;
-        }
-
-        .review-text {
-            font-size: 1.1em;
-            line-height: 1.5;
-        }
-
-        .review-text strong {
-            display: block;
-            margin-bottom: 8px;
+        .feature-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
             color: #ff1493;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .faq-section {
+            text-align: center;
+            padding: 20px;
         }
 
-        @keyframes slideIn {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
+        .faq-question {
+            margin: 10px 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
         }
 
-        @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .packs-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .pack {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+            flex: 1;
+        }
+
+        .pack h3 {
+            margin-bottom: 15px;
+        }
+
+        .pack ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pack ul li {
+            margin: 15px 0;
+        }
+
+        .pack ul li.cross {
+            color: red;
+        }
+
+        .pack ul li.check {
+            color: green;
+        }
+
+        .checkout-section {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .checkout-section a {
+            color: white;
+            text-decoration: none;
+            background: #c71585;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .checkout-section a:hover {
+            background: #ff1493;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Koola Tweaks Logo">
         <h1>Koola Tweaks</h1>
-        <p>Boost FPS | Lower Delay | Reduce Latency</p>
+        <div class="nav-bar">
+            <a href="#home" class="active">Home</a>
+            <a href="#discord">Discord</a>
+            <a href="#packs">Packs</a>
+            <a href="#" id="language">Language</a>
+        </div>
+        <div class="account-buttons">
+            <a href="#signin">Sign In</a>
+            <a href="#create-account">Create Account</a>
+        </div>
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#discord">Discord</a>
-        <a href="#reviews">Reviews</a>
-    </nav>
+
     <section id="home" class="content">
-        <h2>Welcome to Koola Tweaks</h2>
-        <p>Koola Tweaks is your go-to solution for improving FPS, lowering delay, and minimizing latency. Our free utility provides essential tweaks to boost your gaming experience, while the Ultimate utility unlocks the full potential of your setup for just $5.</p>
-        <a href="#features" class="cta-button">Learn More About Ultimate</a>
+        <h2>Kill Your Slow PC</h2>
+        <p>High latency and low FPS holding you back? Use Koola Tweaks to take your gaming experience to the next level!</p>
+        <a href="#checkout" class="cta-button">Purchase Now</a>
     </section>
+
+    <section class="banner">
+        What Do We Offer?
+    </section>
+
     <section id="features" class="content">
-        <h2>Ultimate Utility Features</h2>
         <div class="features-grid">
             <div class="feature-box">
-                <h3 class="feature-title">USB Tweaks</h3>
-                <p class="feature-description">Optimize USB performance to reduce input delay and enhance connectivity stability.</p>
+                <h3 class="feature-title">Increased FPS</h3>
+                <p>Achieve higher frame rates with optimized tweaks tailored to your system.</p>
             </div>
             <div class="feature-box">
-                <h3 class="feature-title">Input Delay Tweaks</h3>
-                <p class="feature-description">Achieve ultra-low input delay for a competitive edge in gaming.</p>
+                <h3 class="feature-title">Reduced Latency</h3>
+                <p>Experience smoother gameplay with minimized input lag and latency.</p>
             </div>
             <div class="feature-box">
-                <h3 class="feature-title">Windows Settings Tweaks</h3>
-                <p class="feature-description">Fine-tune Windows settings for peak system performance and responsiveness.</p>
+                <h3 class="feature-title">Decreased Lag</h3>
+                <p>Say goodbye to frustrating lag spikes and interruptions.</p>
             </div>
             <div class="feature-box">
-                <h3 class="feature-title">General FPS Tweaks</h3>
-                <p class="feature-description">Unlock higher frame rates and smoother gameplay with targeted optimizations.</p>
+                <h3 class="feature-title">Say Byte to Lag</h3>
+                <p>Revolutionary tweaks that bite back at lag to improve gaming efficiency.</p>
             </div>
             <div class="feature-box">
-                <h3 class="feature-title">Network Tweaks</h3>
-                <p class="feature-description">Reduce latency and ensure a stable connection for seamless online gaming.</p>
+                <h3 class="feature-title">Dominate Games</h3>
+                <p>Unleash your system’s true potential to gain a competitive edge.</p>
             </div>
             <div class="feature-box">
-                <h3 class="feature-title">CPU Tweaks</h3>
-                <p class="feature-description">Maximize your CPU's potential with advanced performance adjustments.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">GPU Tweaks</h3>
-                <p class="feature-description">Boost graphical performance to ensure stunning visuals and high FPS.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">Power Tweaks</h3>
-                <p class="feature-description">Optimize power settings to balance performance and energy efficiency.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">Game Booster Tweaks</h3>
-                <p class="feature-description">Enhance game performance with real-time optimizations tailored to your system.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">DirectX Tweaks</h3>
-                <p class="feature-description">Enhance DirectX performance for smoother and more responsive graphics.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">Explorer Tweaks</h3>
-                <p class="feature-description">Streamline Windows Explorer settings for better usability and performance.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">RAM Tweaks</h3>
-                <p class="feature-description">Optimize memory usage to boost overall system responsiveness.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">Storage Tweaks</h3>
-                <p class="feature-description">Improve storage drive efficiency for faster read/write speeds.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">Debloating Tweaks</h3>
-                <p class="feature-description">Remove unnecessary bloatware to free up resources and improve performance.</p>
-            </div>
-            <div class="feature-box">
-                <h3 class="feature-title">Cleaning Tweaks</h3>
-                <p class="feature-description">Automate system cleaning tasks for a clutter-free and optimized setup.</p>
+                <h3 class="feature-title">Under 5 Minutes</h3>
+                <p>Get started with Koola Tweaks in less than 5 minutes!</p>
             </div>
         </div>
-        <a href="https://discord.gg/koola" class="cta-button">Get Ultimate for $5</a>
     </section>
-    <section id="discord" class="content">
-        <h2>Join Our Community</h2>
-        <p>Connect with other gamers and get support directly from the Koola Tweaks team. Click the button below to join our Discord server.</p>
-        <a href="https://discord.gg/koola" class="cta-button">Join Discord</a>
+
+    <section class="faq-section">
+        <h2>FAQ</h2>
+        <div class="faq-question">Is Koola Tweaks a virus?</div>
+        <div class="faq-question">Will Koola Tweaks harm my computer?</div>
+        <div class="faq-question">Can I undo tweaks?</div>
+        <div class="faq-question">What payment methods are supported?</div>
     </section>
-    <section id="reviews" class="content">
-        <h2>What Users Say</h2>
-        <div class="review-box">
-            <div class="review-item">
-                <div class="review-text">
-                    <strong>Fetuso:</strong>
-                    "Koola Tweaks doubled my FPS in no time! Highly recommend the Ultimate utility."
-                </div>
-            </div>
-            <div class="review-item">
-                <div class="review-text">
-                    <strong>YADII-_-:</strong>
-                    "I can't believe how smooth my games run now. Totally worth the $5!"
-                </div>
-            </div>
-            <div class="review-item">
-                <div class="review-text">
-                    <strong>IKONIK:</strong>
-                    "The free version is great, but the Ultimate utility takes it to another level. Must-buy!"
-                </div>
-            </div>
+
+    <section id="packs" class="packs-section">
+        <div class="pack">
+            <h3>Free Utility</h3>
+            <ul>
+                <li class="cross">USB Tweaks</li>
+                <li class="cross">Network Tweaks</li>
+                <li class="check">Basic FPS Tweaks</li>
+                <li class="check">Basic Latency Tweaks</li>
+            </ul>
         </div>
-        <a href="https://discord.gg/koola" class="cta-button">Upgrade to Ultimate</a>
+        <div class="pack">
+            <h3>Ultimate Utility</h3>
+            <ul>
+                <li class="check">USB Tweaks</li>
+                <li class="check">Network Tweaks</li>
+                <li class="check">Advanced FPS Tweaks</li>
+                <li class="check">Advanced Latency Tweaks</li>
+                <li class="check">GPU Optimization</li>
+                <li class="check">Storage Boosting</li>
+                <li class="check">CPU Performance Enhancements</li>
+                <li class="check">Windows Registry Optimizations</li>
+            </ul>
+        </div>
     </section>
+
+    <section id="checkout" class="checkout-section">
+        <h2>Complete Your Purchase</h2>
+        <p>To complete your purchase, sign in or create an account and proceed to checkout. Only $5 via PayPal!</p>
+        <a href="https://www.paypal.com/paypalme/koolatweaks">Checkout with PayPal</a>
+    </section>
+
     <footer>
         <p>&copy; 2024 Koola Tweaks. All rights reserved.</p>
     </footer>
